@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>
+rrs
+</title>
+</head>
+<body>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>
+<script>
+function no(){
+document.getElementById("d1").innerHTML="train1";
+name();
+}
+function name(){
+document.getElementById("d2").innerHTML="trainname";
+from();
+}
+function from(){
+document.getElementById("d3").innerHTML="fromcity";
+to();
+}
+function to(){
+document.getElementById("d4").innerHTML="tocity";
+arriv();
+}
+function arriv(){
+document.getElementById("d5").innerHTML="time";
+}
+function myfun(){
+$.get( "/getvar", function( data ) {
+  name = data.name;
+document.getElementById("id").innerHTML=name;
+});
+}
+
+</script>
+<table>
+	<tr>
+<th>
+Train no</th>
+<th>
+Train name</th>
+<th>
+From
+</th>
+<th>
+To
+</th>
+<th>
+arrival
+</th>
+	</tr>
+	<tr>
+<td>
+<p id="d1"></p>
+</td>
+<td>
+<p id="d2"></p>
+</td>
+<td>
+<p id="d3"></p>
+</td>
+<td>
+<p id="d4"></p>
+</td>
+<td>
+<p id="d5"></p>
+</td>
+	</tr>
+</table>
+<input type="button" onclick="no();" value="click"/>
+<p id="id"></p>
+<input type="button" onclick="myfun();" value="click"/>
+</body>
+</html>
